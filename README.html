@@ -3,187 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radaris | Infomatrix Gold Project</title>
+    <title>RADARIS | Comprehensive Scientific & Technical Portfolio</title>
     <style>
         :root {
             --primary: #0f172a;
-            --accent: #3b82f6;
-            --gold: #f59e0b;
-            --success: #10b981;
-            --text-light: #f8fafc;
-            --card-bg: #ffffff;
+            --secondary: #1e293b;
+            --accent: #2563eb;
+            --gold: #fbbf24;
+            --success: #059669;
+            --danger: #dc2626;
+            --light: #f8fafc;
+            --border: #e2e8f0;
         }
 
-        body { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; margin: 0; color: #334155; background: #f1f5f9; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; margin: 0; color: #1e293b; background: var(--light); scroll-behavior: smooth; }
         
-        /* Hero Section */
+        /* Layout Components */
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+        
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--primary); margin-top: 0; }
+        h2 { font-size: 2.5rem; border-left: 8px solid var(--accent); padding-left: 20px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--accent); }
+        
+        /* Navigation & Hero */
+        nav { background: var(--primary); color: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+
         header { 
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: var(--text-light);
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--gold);
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1517404215738-15263e9f9178?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center; color: white; padding: 150px 20px; text-align: center; border-bottom: 10px solid var(--gold);
         }
+        .hero-tag { background: var(--gold); color: black; padding: 10px 30px; border-radius: 50px; font-weight: 800; text-transform: uppercase; font-size: 1rem; margin-bottom: 30px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        /* Content Blocks */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid var(--border); transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
+
+        /* Tables */
+        .table-container { overflow-x: auto; margin: 30px 0; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: white; min-width: 800px; }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: #f1f5f9; font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 0.85rem; }
+        tr:last-child td { border-bottom: none; }
+        .highlight-row { background: #fffbeb; }
+
+        /* Scientific Lists */
+        .spec-list { list-style: none; padding: 0; margin: 0; }
+        .spec-list li { padding: 15px 0; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
+        .spec-list li:last-child { border-bottom: none; }
+        .spec-label { font-weight: 600; color: var(--secondary); }
+        .spec-value { color: var(--accent); font-weight: 800; }
+
+        /* Market Section */
+        .market-header { background: var(--primary); color: white; padding: 100px 40px; border-radius: 30px; text-align: center; margin-bottom: -50px; position: relative; z-index: 1; }
+        .market-num { font-size: 4rem; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
         
-        /* Gold Medal Badge */
-        .badge {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        h1 { font-size: 3.5rem; margin: 10px 0; letter-spacing: -1px; }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 50px; }
-
-        /* Grid Layouts */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-
-        /* Scientific Data Table */
-        .table-container { overflow-x: auto; background: white; border-radius: 12px; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        th { background: #f8fafc; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
-
-        /* Technical Specs List */
-        .spec-list { list-style: none; padding: 0; }
-        .spec-list li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
-        .spec-val { font-weight: bold; color: var(--accent); }
-
-        .market-highlight { background: var(--primary); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-top: 40px; }
-        .market-val { font-size: 2.5rem; color: var(--gold); font-weight: 800; display: block; }
-
-        footer { text-align: center; padding: 60px 20px; color: #64748b; font-size: 0.9rem; }
+        .footer { background: #020617; color: #94a3b8; padding: 100px 20px; text-align: center; }
+        .diagram-placeholder { background: #e2e8f0; border: 3px dashed var(--accent); padding: 60px; text-align: center; border-radius: 20px; margin: 40px 0; font-style: italic; font-weight: 600; color: var(--secondary); }
     </style>
 </head>
 <body>
 
+<nav>
+    <div class="container">
+        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: -1px;">RADARIS <span style="color:var(--gold)">PRO</span></div>
+        <div>
+            <a href="#abstract">Abstract</a>
+            <a href="#stats">Statistics</a>
+            <a href="#tech">Technical</a>
+            <a href="#results">Results</a>
+            <a href="#market">Market</a>
+        </div>
+    </div>
+</nav>
+
 <header>
-    <div class="badge">Infomatrix Applied Science Entry</div>
-    <h1>RADARIS</h1>
-    <p style="font-size: 1.2rem; opacity: 0.9;">Next-Gen Collision Prevention via Radio-Frequency Hazard Detection</p>
+    <div class="hero-tag">Infomatrix 2026 Gold Submission</div>
+    <h1 style="font-size: 5.5rem; margin: 0; letter-spacing: -3px; line-height: 1;">RADARIS</h1>
+    <p style="font-size: 1.8rem; opacity: 0.9; font-weight: 300; max-width: 800px; margin: 20px auto;">A Novel Frontal Collision Warning System utilizing Cognitive Radio-Frequency Networking for Extreme Low-Visibility Environments</p>
 </header>
 
 <div class="container">
-    
-    <section>
-        <h2>Scientific Rationale</h2>
-        <p>Traditional ADAS (Advanced Driver Assistance Systems) rely on <b>optical sensors</b> which fail in 25% of accidents caused by low visibility[cite: 21]. Radaris solves this by using radio waves that penetrate fog, rain, and snow[cite: 13, 107].</p>
-        
+
+    <section id="abstract">
+        <h2>I. Scientific Abstract</h2>
         <div class="grid">
             <div class="card">
-                <h3 style="color: var(--accent);">900 Meters</h3>
-                <p>Maximum effective detection range achieved during field testing[cite: 15, 76].</p>
+                <h3>Purpose of Study</h3>
+                <p>Development of a hazard warning system for frontal collisions with limited visibility to reduce road accidents in poor visibility conditions[cite: 116]. The study addresses the failure of current ADAS systems which rely on optical detection compromised by weather particulates[cite: 142, 143].</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent);">2.4 GHz</h3>
-                <p>Operating frequency using the NRF24L01 module for high-speed data transmission[cite: 47, 61].</p>
-            </div>
-            <div class="card">
-                <h3 style="color: var(--accent);">425m Margin</h3>
-                <p>Extra safety buffer provided beyond the standard 475m braking distance at 100km/h[cite: 54].</p>
+                <h3>Research Hypothesis</h3>
+                <p>The Radaris system will promptly warn drivers of potential collision risks, ensuring effective accident prevention regardless of weather or road conditions. Its simplicity and affordability make it accessible to a wide range of users, reducing financial burdens[cite: 117, 118].</p>
             </div>
         </div>
+        
+        <h3>Stages of Work</h3>
+        <ol class="grid" style="list-style: none; padding: 0;">
+            <li class="card">1. Problem Analysis & Scale Assessment [cite: 120]</li>
+            <li class="card">2. Comparative Analysis of Existing Methods [cite: 121]</li>
+            <li class="card">3. Concept Development & Hardware Selection [cite: 122]</li>
+            <li class="card">4. Prototype Assembly (NRF/ATmega 328) [cite: 123]</li>
+            <li class="card">5. Multi-condition Efficiency Testing [cite: 124]</li>
+            <li class="card">6. Safety Integration Evaluation [cite: 125]</li>
+        </ol>
     </section>
 
-    <section>
-        <h2>Hardware Architecture</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Core Processing</h3>
-                <ul class="spec-list">
-                    <li>Microcontroller <span class="spec-val">ATmega 328</span></li>
-                    <li>Wireless Module <span class="spec-val">NRF24L01</span></li>
-                    <li>Power Input <span class="spec-val">5V / 9V DC</span></li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Antenna Physics</h3>
-                <ul class="spec-list">
-                    <li>Material <span class="spec-val">Copper Wire (1mm)</span></li>
-                    <li>Length <span class="spec-val">90 cm</span></li>
-                    <li>Optimization <span class="spec-val">Signal Tuning</span></li>
-                </ul>
-            </div>
-        </div>
-            </section>
-
-    <section>
-        <h2>Empirical Test Data (2021-2023)</h2>
+    <section id="stats">
+        <h2>II. The Statistical Crisis</h2>
+        <p>According to the WHO, approximately <b>25% of all road accidents</b> occur in conditions of poor visibility[cite: 135]. Historical data confirms a steady increase in casualties as traffic density grows[cite: 133].</p>
+        
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Visibility Condition</th>
-                        <th>Optical System Status</th>
-                        <th>Radaris Performance</th>
+                        <th>Fiscal Year</th>
+                        <th>Total Road Accidents (Low Vis)</th>
+                        <th>Number of Victims</th>
+                        <th>Confirmed Fatalities</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Thick Fog</td>
-                        <td>Limited / Non-functional</td>
-                        <td style="color: var(--success); font-weight: bold;">Stable (900m)</td>
+                        <td>2021</td>
+                        <td>10,500</td>
+                        <td>14,200</td>
+                        <td>1,300</td>
                     </tr>
                     <tr>
-                        <td>Heavy Snow</td>
-                        <td>Occluded Sensors</td>
-                        <td style="color: var(--success); font-weight: bold;">Stable (900m)</td>
+                        <td>2022</td>
+                        <td>11,200</td>
+                        <td>15,500</td>
+                        <td>1,400</td>
                     </tr>
-                    <tr>
-                        <td>Night (No Light)</td>
-                        <td>Limited Range</td>
-                        <td style="color: var(--success); font-weight: bold;">Full Range</td>
+                    <tr class="highlight-row">
+                        <td><b>2023</b></td>
+                        <td><b>12,000</b></td>
+                        <td><b>16,000</b></td>
+                        <td><b>1,500</b></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p><small><i>Source: Field tests conducted under simulated and real-world conditions[cite: 10, 71].</i></small></p>
+        <p style="font-size: 0.8rem; color: #666; text-align: center;">Source: National Highway Traffic Safety Administration (NHTSA), 2024[cite: 140].</p>
     </section>
 
-    <section class="market-highlight">
-        <h2>Global Market Scalability (TAM/SAM/SOM)</h2>
-        <p>Radaris is not just a prototype; it is a viable commercial solution[cite: 81].</p>
+    <section id="tech">
+        <h2>III. Hardware Architecture & Engineering</h2>
+        <p>The Radaris system operates on the <b>2.4 GHz Industrial, Scientific, and Medical (ISM) band</b>. It is engineered to automatically detect obstacles and broadcast high-priority warning signals to surrounding vehicles[cite: 145, 161].</p>
+        
+        <div class="diagram-placeholder">
+            [Insert FIGURE 2: RADARIS SYSTEM DIAGRAM HERE - ATmega328 / NRF24L01 / Ultrasonic Integration]
+        </div>
+
         <div class="grid">
-            <div>
-                <span class="market-val">4.77T ₸</span>
-                <p>Global Market (TAM) [cite: 92]</p>
+            <div class="card">
+                <h3>Core Hardware Components</h3>
+                <ul class="spec-list">
+                    <li><span class="spec-label">Microcontroller</span> <span class="spec-value">ATmega 328 [cite: 176]</span></li>
+                    <li><span class="spec-label">Wireless Transceiver</span> <span class="spec-value">NRF24L01 (2.4 GHz) [cite: 175]</span></li>
+                    <li><span class="spec-label">Alert Module</span> <span class="spec-value">Audio High-Decibel [cite: 177]</span></li>
+                    <li><span class="spec-label">Display Unit</span> <span class="spec-value">LCD Real-time Distance [cite: 178]</span></li>
+                    <li><span class="spec-label">Power Source</span> <span class="spec-value">5V / 9V DC Accumulator [cite: 179]</span></li>
+                </ul>
             </div>
-            <div>
-                <span class="market-val">200B ₸</span>
-                <p>CIS Market (SAM) [cite: 93]</p>
-            </div>
-            <div>
-                <span class="market-val">7.8B ₸</span>
-                <p>Kazakhstan (SOM) [cite: 94]</p>
+            <div class="card">
+                <h3>Antenna Physics & Optimization</h3>
+                <p>The system utilizes a custom-tuned antenna to ensure signal integrity over long distances in adverse weather.</p>
+                <ul class="spec-list">
+                    <li><span class="spec-label">Material</span> <span class="spec-value">High-Conductivity Copper</span></li>
+                    <li><span class="spec-label">Diameter</span> <span class="spec-value">1.0 mm</span></li>
+                    <li><span class="spec-label">Optimized Length</span> <span class="spec-value">90.0 cm</span></li>
+                </ul>
             </div>
         </div>
     </section>
 
+    <section id="results">
+        <h2>IV. Empirical Results & Comparisons</h2>
+        <p>A vehicle traveling at 100 km/h requires a braking distance of 475 meters[cite: 168]. Radaris provides nearly <b>double</b> the required safety margin[cite: 164, 190].</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Performance Metric</th>
+                        <th>Traditional Safety Systems</th>
+                        <th>RADARIS System [cite: 146]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Effective Visibility Support</b></td>
+                        <td style="color:var(--danger)">Low (Depends on Sight)</td>
+                        <td style="color:var(--success); font-weight:800">High (Weather Independent)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Operating Range</b></td>
+                        <td style="color:var(--danger)">Line of Sight Only</td>
+                        <td style="color:var(--success); font-weight:800">900 Meters Stable Range</td>
+                    </tr>
+                    <tr>
+                        <td><b>Reaction Logic</b></td>
+                        <td style="color:var(--danger)">Manual/Driver Dependent</td>
+                        <td style="color:var(--success); font-weight:800">Autonomous RF Alerting</td>
+                    </tr>
+                    <tr>
+                        <td><b>Commercial Accessibility</b></td>
+                        <td style="color:var(--danger)">High-Cost/Luxury Install</td>
+                        <td style="color:var(--success); font-weight:800">Affordable/Universal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="market">
+        <div class="market-header">
+            <h2 style="color:var(--gold); border:none; padding:0; margin-bottom: 20px;">V. Market Potential & Economic Outlook</h2>
+            <p style="font-size: 1.2rem; opacity: 0.8;">The project demonstrates significant commercial scalability via TAM/SAM/SOM assessment[cite: 195, 200].</p>
+        </div>
+        
+        <div class="grid" style="margin-top: 0;">
+            <div class="card" style="text-align:center;">
+                <span class="market-num">4.77T ₸</span>
+                <h3>Global Market (TAM)</h3>
+                <p>Includes 2.87T ₸ for radio receivers and 1.9T ₸ for transmitters[cite: 206].</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <span class="market-num">200B ₸</span>
+                <h3>CIS Market (SAM)</h3>
+                <p>Volume for regional deployment in the CIS economic zone[cite: 207].</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <span class="market-num">7.8B ₸</span>
+                <h3>Kazakhstan Market (SOM)</h3>
+                <p>Targeting 30% of the transport fleet in the Republic of Kazakhstan[cite: 208].</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:30px; border-left: 10px solid var(--success);">
+            <h3>Unit Economics & Profitability [cite: 211, 212]</h3>
+            <p>Our trading model establishes high margins to attract industrial investment:</p>
+            <ul class="grid" style="list-style: none; padding: 0;">
+                <li><b>Transmitter Markup:</b> 2,000 ₸ Per Unit</li>
+                <li><b>Receiver Markup:</b> 3,000 ₸ Per Unit</li>
+                <li><b>Total Economic Outlook:</b> Favorable conditions for immediate implementaiton[cite: 214].</li>
+            </ul>
+        </div>
+    </section>
+
     <section>
-        <h2>Future Innovations [cite: 108-110]</h2>
-        <ul>
-            <li><b>Accessibility:</b> Visual alert integration for hearing-impaired drivers.</li>
-            <li><b>Intelligence:</b> Advanced modeling to differentiate between vehicles and wildlife.</li>
-            <li><b>Precision:</b> Integration of GPS modules for exact coordinate-based hazard mapping.</li>
-        </ul>
+        <h2>VI. Future Roadmap [cite: 222]</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Enhanced Accessibility</h3>
+                <p>Integration of high-intensity visual cues to ensure safety for drivers with hearing impairments[cite: 223].</p>
+            </div>
+            <div class="card">
+                <h3>AI-Driven Identification</h3>
+                <p>Development of models capable of determining the exact number, types, and trajectories of obstacles[cite: 224].</p>
+            </div>
+        </div>
+        <div class="diagram-placeholder">
+            [Insert FIGURE 7: ENHANCED RADIO RECEIVER - Integrated GPS / Color LCD / Object Recognition]
+        </div>
     </section>
 
 </div>
 
-<footer>
-    <p><b>Radaris Collision Warning System</b></p>
-    <p>Scientific Research & Hardware Development Portfolio</p>
-    <p>&copy; 2026 | Developed for the Infomatrix Competition</p>
+<footer class="footer">
+    <div class="container">
+        <h2 style="color:white; border:none; padding:0; margin-bottom: 10px;">RADARIS SYSTEM</h2>
+        <p>Scientific Research & Hardware Engineering Portfolio</p>
+        <p style="opacity: 0.5; font-size: 0.8rem;">Developed for the prevention of accidents and the protection of human life[cite: 130, 225].</p>
+        <p style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">&copy; 2026 Infomatrix Entry. All Rights Reserved.</p>
+    </div>
 </footer>
 
 </body>
