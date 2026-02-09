@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radaris | Frontal Collision Warning System</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        h2 {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .highlight-box {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            color: var(--accent);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #eee;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="hero-title">RADARIS</h1>
+        <p class="tagline">Next-Generation Frontal Collision Warning System for Low Visibility [cite: 2, 3]</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="section">
+            <h2>The Problem</h2>
+            <p>According to the WHO, approximately <b>25% of all road accidents</b> occur in poor visibility conditions[cite: 21]. Traditional safety systems like ABS often fail when drivers cannot see the hazard in time due to fog, rain, or snow[cite: 20, 28].</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <span class="stat-number">12,000</span>
+                    <p>Road accidents in 2023 [cite: 25]</p>
+                </div>
+                <div class="card">
+                    <span class="stat-number">1,500</span>
+                    <p>Lives lost annually in poor visibility [cite: 25]</p>
+                </div>
+                <div class="card">
+                    <span class="stat-number">900m</span>
+                    <p>Radaris Detection Range </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Radaris Solution</h2>
+            <p>Radaris is an affordable, radio-signal-based warning system that works independently of weather conditions[cite: 4, 13]. Unlike visual sensors, Radaris uses 2.4 GHz frequencies to communicate between vehicles, ensuring safety even in zero visibility[cite: 30, 47].</p>
+            
+            <h3>Core Components [cite: 60-64]</h3>
+            <div>
+                <span class="tech-badge">ATmega 328 Microcontroller</span>
+                <span class="tech-badge">NRF24L01 Wireless Module</span>
+                <span class="tech-badge">90cm Copper Antenna</span>
+                <span class="tech-badge">Audio-Visual Alert Module</span>
+            </div>
+
+            <table>
+                <caption><b>Radaris vs. Traditional Systems [cite: 33]</b></caption>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Traditional Systems</th>
+                        <th>Radaris System</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Low Visibility Efficiency</td>
+                        <td>Low</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Signal Type</td>
+                        <td>Visual/Laser</td>
+                        <td>Radio Signals</td>
+                    </tr>
+                    <tr>
+                        <td>Installation Cost</td>
+                        <td>High</td>
+                        <td>Affordable</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Technical Specifications</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Transmission Range</h3>
+                    <p>Reliable operation at a range of up to <b>900 meters</b>, significantly exceeding the standard 475m braking distance at 100 km/h[cite: 54, 76].</p>
+                </div>
+                <div class="card">
+                    <h3>Weather Resistance</h3>
+                    <p>Tested effectively in simulated and real-world <b>fog, rain, and snow</b> conditions[cite: 71, 75].</p>
+                </div>
+                <div class="card">
+                    <h3>Safety First</h3>
+                    <p>Uses radio waves that are 100% safe for human health, as confirmed by numerous studies[cite: 106].</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="highlight-box">
+                <h2>Market & Scalability [cite: 81]</h2>
+                <p>The Radaris project is designed for global scalability with a Total Addressable Market (TAM) of <b>4.77 Trillion KZT</b>[cite: 92].</p>
+                <div class="grid" style="color: var(--primary);">
+                    <div class="card">
+                        <h4>Global (TAM)</h4>
+                        <p>4.77 Trillion KZT [cite: 92]</p>
+                    </div>
+                    <div class="card">
+                        <h4>CIS Market (SAM)</h4>
+                        <p>200 Billion KZT [cite: 93]</p>
+                    </div>
+                    <div class="card">
+                        <h4>Kazakhstan (SOM)</h4>
+                        <p>7.8 Billion KZT [cite: 94]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Future Development [cite: 108-110]</h2>
+            <ul>
+                <li>Integration of visual cues for hearing-impaired drivers.</li>
+                <li>Advanced modeling to determine obstacle types (vehicle, animal, debris).</li>
+                <li>Integration with automatic vehicle hazard lighting systems.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p><b>Radaris Collision Warning Project © 2026</b></p>
+        <p>Developed to improve road safety and protect lives[cite: 38].</p>
+        <p><small>Data Source: NHTSA & WHO Statistics [cite: 21, 26]</small></p>
+    </footer>
+
+</body>
+</html>
